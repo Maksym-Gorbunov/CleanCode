@@ -5,7 +5,8 @@ public class MyTest {
   @Test
   public void nameOfTest() {
     String expected = "TEST";
-    String actual =  Main.toUppercase("text");
+    String actual =  App.toUppercase("text");
     assertEquals(expected, actual);
   }
+
 }
