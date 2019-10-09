@@ -5,6 +5,9 @@ public class Main {
   }
 
   public static String toUppercase(String text){
+//    if(text == null){
+//      return null;
+//    }
     return text.toUpperCase();
   }
 }

@@ -13,7 +13,8 @@ public class MainTest {
 
   @Test
   public void toUppercaseCheckNull(){
-    String expected = "";
+    //String expected = null;
+    Exception expected = Exception;
     String actual = Main.toUppercase(null);
     assertEquals(expected, actual);
   }
