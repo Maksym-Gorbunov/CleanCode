@@ -16,6 +16,21 @@ public class TestExercises {
     exercises = new Exercises();
   }
 
+
+  ///////////////////////////////   6   ///////////////////////////////////
+  // 6 Skriv testfall för funktionen isPrime(int) som ska returnera true om parametern är ett
+  // primtal. Primtal är tal som bara är jämnt delbara med sig själva och ett. De första primtalen
+  // (1 räknas inte) är: 2, 3, 5, 7, 11, 13, 17, 19, 29, 31...
+  @Test
+  public void isPrime(){
+    boolean expected = true;
+    int value = 13;
+    boolean actual = exercises.isPrime(value);
+    assertEquals(expected, actual);
+  }
+
+
+
   ///////////////////////////////   5   ///////////////////////////////////
   @Test
   public void repeat(){
@@ -25,7 +40,6 @@ public class TestExercises {
     String actual = exercises.repeat(value1, value2);
     assertEquals(expected, actual);
   }
-
 
   ///////////////////////////////   4   ///////////////////////////////////
   @Test

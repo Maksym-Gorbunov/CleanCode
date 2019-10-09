@@ -29,4 +29,11 @@ public class Exercises {
     if (text == null) return (start + "" + end);
     return (start + text + end);
   }
+
+  public boolean isPrime(int value) {
+    for(int i=2; i< value; i++){
+      if(value%i == 0) return false;
+    }
+    return true;
+  }
 }
