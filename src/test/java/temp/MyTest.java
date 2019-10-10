@@ -1,4 +1,8 @@
+package temp;
+
 import org.junit.Test;
+import temp.App;
+
 import static org.junit.Assert.assertEquals;
 
 public class MyTest {

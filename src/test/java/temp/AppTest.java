@@ -1,4 +1,7 @@
+package temp;
+
 import org.junit.Test;
+import temp.App;
 
 import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
