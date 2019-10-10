@@ -46,8 +46,15 @@ public class FizzBuzzTest {
 
   @Test
   public void testBuzzDivisibleBy5(){
-    int number = 15;
+    int number = 10;
     String result = fizzBuzz.play(number);
     assertEquals("Buzz", result);
+  }
+
+  @Test
+  public void testBuzzDivisibleBy5And3(){
+    int number = 15;
+    String result = fizzBuzz.play(number);
+    assertEquals("FizzBuzz", result);
   }
 }

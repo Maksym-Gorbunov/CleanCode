@@ -3,10 +3,6 @@ package exercises_One;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import fizzBuzz.FizzBuzz;
-import org.junit.Test;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.ConcurrentModificationException;
@@ -31,7 +27,6 @@ public class TestExercises_1to6 {
   // sellPet(String name) - tar bort ett djur
   // findPet(String name) - letar efter ett djur i affären och returnerar det första den hittar; null
   // om den inte hittar något
-
   @Test
   public void findPet(){
     String expected = null;
@@ -43,7 +38,6 @@ public class TestExercises_1to6 {
       assertEquals(expected, null);
     }
   }
-
   @Test
   public void addPet(){
     int total = petShop.totalPets();
@@ -55,7 +49,6 @@ public class TestExercises_1to6 {
     assertEquals(expected, pet);
     assertEquals(total+1, petShop.totalPets());
   }
-
   @Test
   public void sellPet(){
     String name = "Spike";
@@ -66,17 +59,13 @@ public class TestExercises_1to6 {
     assertEquals(null, actual);
     assertEquals(total-1, petShop.totalPets());
   }
-
   @Test(expected = ConcurrentModificationException.class)
   public void whilstRemovingDuringIteration_shouldThrowException() throws InterruptedException {
-
     List<Integer> integers = new ArrayList(Arrays.asList(1, 2, 3));
-
     for (Integer integer : integers) {
       integers.remove(1);
     }
   }
-
 
   ///////////////////////////////   6   ///////////////////////////////////
   // Skriv testfall för funktionen isPrime(int) som ska returnera true om parametern är ett
@@ -95,7 +84,6 @@ public class TestExercises_1to6 {
   // som parameter, och returnera en string med lika många kopior av tecknet som talet. Tips:
   // fundera på vilka olika sorters tillåtna respektive otillåtna värden respektive parameter har.
   // Specen är inte fullständig utan du måste göra designbeslut.
-
   @Test
   public void repeat(){
     String expected = "rrrr";
@@ -107,7 +95,6 @@ public class TestExercises_1to6 {
 
   ///////////////////////////////   4   ///////////////////////////////////
   // Skriv testfall för funktionen isOdd(int x) som ska returnera true om parametern x är ett udda tal.
-
   @Test
   public void isOdd(){
     boolean expected = true;
@@ -119,7 +106,6 @@ public class TestExercises_1to6 {
   ///////////////////////////////   3   ///////////////////////////////////
   // Skriv testfall för funktionen int multiply(int, int) som ska ta två heltal som parametrar och
   // returnerar deras produkt. Exempel: multiply(2, 5) → 10
-
   @Test
   public void multiply(){
     int expected = 10;
@@ -128,7 +114,6 @@ public class TestExercises_1to6 {
     int actual = exercises.multiply(value1, value2);
     assertEquals(expected, actual);
   }
-
   @Test
   public void multiplyNoll(){
     int expected = 0;
@@ -141,7 +126,6 @@ public class TestExercises_1to6 {
   ///////////////////////////////   2   ///////////////////////////////////
   // Skriv testfall för funktionen isTrue(bool) som ska returnera true om parametern är true
   // och false annars.
-
   @Test
   public void isTrue(){
     boolean expected = true;
@@ -150,12 +134,10 @@ public class TestExercises_1to6 {
     assertEquals(expected, actual);
   }
 
-
   ///////////////////////////////   1   ///////////////////////////////////
   // Skriv testfall för funktionen renderParagraph, som ska ta en sträng som parameter och
   // returnera en sträng som motsvarar en HTML-paragraf. Exempel:
   // renderParagraph("hello") ! "<p>hello</p>"
-
   @Test
   public void renderParagraph(){
     //Arrange
@@ -167,7 +149,6 @@ public class TestExercises_1to6 {
     //Assert
     assertEquals(expected, actual);
   }
-
   @Test
   public void renderParagraphByNull(){
     String text = null;
@@ -176,7 +157,5 @@ public class TestExercises_1to6 {
     actual = exercises.renderParagraph(text);
     assertEquals(expected, actual);
   }
-
-
 
 }
