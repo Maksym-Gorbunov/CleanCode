@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import fizzBuzz.FizzBuzz;
 import org.junit.Test;
 
-public class TestExercises {
+public class TestExercises_1to6 {
 
   private Exercises exercises;
 
@@ -16,9 +16,8 @@ public class TestExercises {
     exercises = new Exercises();
   }
 
-
   ///////////////////////////////   6   ///////////////////////////////////
-  // 6 Skriv testfall för funktionen isPrime(int) som ska returnera true om parametern är ett
+  // Skriv testfall för funktionen isPrime(int) som ska returnera true om parametern är ett
   // primtal. Primtal är tal som bara är jämnt delbara med sig själva och ett. De första primtalen
   // (1 räknas inte) är: 2, 3, 5, 7, 11, 13, 17, 19, 29, 31...
   @Test
@@ -29,9 +28,12 @@ public class TestExercises {
     assertEquals(expected, actual);
   }
 
-
-
   ///////////////////////////////   5   ///////////////////////////////////
+  // Skriv testfall för funktionen String repeat(char, int). Den ska ta ett tecken och ett heltal
+  // som parameter, och returnera en string med lika många kopior av tecknet som talet. Tips:
+  // fundera på vilka olika sorters tillåtna respektive otillåtna värden respektive parameter har.
+  // Specen är inte fullständig utan du måste göra designbeslut.
+
   @Test
   public void repeat(){
     String expected = "rrrr";
@@ -42,6 +44,8 @@ public class TestExercises {
   }
 
   ///////////////////////////////   4   ///////////////////////////////////
+  // Skriv testfall för funktionen isOdd(int x) som ska returnera true om parametern x är ett udda tal.
+
   @Test
   public void isOdd(){
     boolean expected = true;
@@ -51,6 +55,9 @@ public class TestExercises {
   }
 
   ///////////////////////////////   3   ///////////////////////////////////
+  // Skriv testfall för funktionen int multiply(int, int) som ska ta två heltal som parametrar och
+  // returnerar deras produkt. Exempel: multiply(2, 5) → 10
+
   @Test
   public void multiply(){
     int expected = 10;
@@ -70,6 +77,9 @@ public class TestExercises {
   }
 
   ///////////////////////////////   2   ///////////////////////////////////
+  // Skriv testfall för funktionen isTrue(bool) som ska returnera true om parametern är true
+  // och false annars.
+
   @Test
   public void isTrue(){
     boolean expected = true;
@@ -78,7 +88,12 @@ public class TestExercises {
     assertEquals(expected, actual);
   }
 
+
   ///////////////////////////////   1   ///////////////////////////////////
+  // Skriv testfall för funktionen renderParagraph, som ska ta en sträng som parameter och
+  // returnera en sträng som motsvarar en HTML-paragraf. Exempel:
+  // renderParagraph("hello") ! "<p>hello</p>"
+
   @Test
   public void renderParagraph(){
     //Arrange
