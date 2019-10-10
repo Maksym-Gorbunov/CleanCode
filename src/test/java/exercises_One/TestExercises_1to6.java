@@ -7,14 +7,76 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import fizzBuzz.FizzBuzz;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.ConcurrentModificationException;
+import java.util.List;
+
 public class TestExercises_1to6 {
 
   private Exercises exercises;
+  private PetShop petShop;
 
   @Before
   public void init(){
     exercises = new Exercises();
+    petShop = new PetShop();
   }
+
+  ///////////////////////////////   7   ///////////////////////////////////
+  // Skriv testfall för klassen PetShop. Till sin hjälp har den modellklassen Pet, som har
+  // egenskapen public String name. (Klassen Pet har ingen logik, bara publika egenskaper; så
+  // det finns inget i den att testa.) PetShop ska ha metoderna:
+  // addPet(Pet pet) - lägger till ett djur till affären
+  // sellPet(String name) - tar bort ett djur
+  // findPet(String name) - letar efter ett djur i affären och returnerar det första den hittar; null
+  // om den inte hittar något
+
+  @Test
+  public void findPet(){
+    String expected = null;
+    String name = "Spike";
+    Pet actual = petShop.findPet(name);
+    if(actual!=null){
+      assertEquals(expected, actual.name);
+    } else {
+      assertEquals(expected, null);
+    }
+  }
+
+  @Test
+  public void addPet(){
+    int total = petShop.totalPets();
+    String name = "Spike";
+    Pet pet = new Pet(name);
+    Pet expected = pet;
+    petShop.addPet(pet);
+    Pet actual = petShop.findPet(pet.name);
+    assertEquals(expected, pet);
+    assertEquals(total+1, petShop.totalPets());
+  }
+
+  @Test
+  public void sellPet(){
+    String name = "Spike";
+    petShop.addPet(new Pet(name));
+    int total = petShop.totalPets();
+    petShop.sellPet(name);
+    Pet actual = petShop.findPet(name);
+    assertEquals(null, actual);
+    assertEquals(total-1, petShop.totalPets());
+  }
+
+  @Test(expected = ConcurrentModificationException.class)
+  public void whilstRemovingDuringIteration_shouldThrowException() throws InterruptedException {
+
+    List<Integer> integers = new ArrayList(Arrays.asList(1, 2, 3));
+
+    for (Integer integer : integers) {
+      integers.remove(1);
+    }
+  }
+
 
   ///////////////////////////////   6   ///////////////////////////////////
   // Skriv testfall för funktionen isPrime(int) som ska returnera true om parametern är ett
