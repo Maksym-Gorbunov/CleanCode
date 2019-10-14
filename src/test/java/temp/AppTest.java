@@ -11,19 +11,19 @@ public class AppTest {
   @Test
   public void toUppercase_convertToUppercase() {
     String expected = "TEXT";
-    String actual =  App.toUppercase("text");
+    String actual = App.toUppercase("text");
     assertEquals(expected, actual);
   }
 
   @Test
-  public void toUppercase_castNullPointerExceptionIfArgumentIsNull(){
+  public void toUppercase_castNullPointerExceptionIfArgumentIsNull() {
     assertThrows(NullPointerException.class, () -> {
       App.toUppercase(null);
     });
   }
 
   @Test(expected = NullPointerException.class)
-  public void toUppercase_castNullPointerExceptionIfArgumentIsNull2(){
+  public void toUppercase_castNullPointerExceptionIfArgumentIsNull2() {
     App.toUppercase(null);
   }
 
