@@ -1,4 +1,4 @@
-package exercises_One;
+package exercises;
 
 public class Pet {
 
